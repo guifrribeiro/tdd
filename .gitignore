@@ -2,3 +2,5 @@
 src/LeilaoOnline.Core/bin
 src/LeilaoOnline.Core/obj
 tdd/
+tests/LeilaoOnline.Tests/bin
+tests/LeilaoOnline.Tests/obj

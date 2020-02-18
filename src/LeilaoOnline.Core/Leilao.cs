@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LeilaoOnline.Core
@@ -9,6 +10,7 @@ namespace LeilaoOnline.Core
         private IList<Lance> _lances;
         public IEnumerable<Lance> Lances => _lances;
         public string Peca { get; }
+        public Lance Ganhador { get; private set; }
 
         public Leilao(string peca)
         {
@@ -28,7 +30,9 @@ namespace LeilaoOnline.Core
 
         public void TerminaPregao()
         {
-
+            Ganhador = Lances
+                .OrderBy(l => l.Valor)
+                .Last();
         }
     }
 }
