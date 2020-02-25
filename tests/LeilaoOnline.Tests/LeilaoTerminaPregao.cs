@@ -16,15 +16,12 @@ namespace LeilaoOnline.Tests
             var fulano = new Interessada("Fulano", leilao);
             var maria = new Interessada("Maria", leilao);
 
+            leilao.IniciaPregao();
+
             foreach(var valor in ofertas)
             {
-
+                leilao.RecebeLance(fulano, valor);
             }
-
-            leilao.RecebeLance(fulano, 800);
-            leilao.RecebeLance(maria, 900);
-            leilao.RecebeLance(fulano, 1000);
-            leilao.RecebeLance(maria, 990);
 
             //Act - método sob teste
             leilao.TerminaPregao();
@@ -42,6 +39,8 @@ namespace LeilaoOnline.Tests
             //Arranje - cenários
             var leilao = new Leilao("Van Gogh");
             var fulano = new Interessada("Fulano", leilao);
+
+            leilao.IniciaPregao();
 
             leilao.RecebeLance(fulano, 800);
 
@@ -62,6 +61,8 @@ namespace LeilaoOnline.Tests
             var leilao = new Leilao("Van Gogh");
             var fulano = new Interessada("Fulano", leilao);
             var maria = new Interessada("Maria", leilao);
+
+            leilao.IniciaPregao();
 
             leilao.RecebeLance(fulano, 800);
             leilao.RecebeLance(maria, 900);
@@ -86,6 +87,8 @@ namespace LeilaoOnline.Tests
             var fulano = new Interessada("Fulano", leilao);
             var maria = new Interessada("Maria", leilao);
             var beltrano = new Interessada("Beltrano", leilao);
+
+            leilao.IniciaPregao();
 
             leilao.RecebeLance(fulano, 800);
             leilao.RecebeLance(maria, 900);
