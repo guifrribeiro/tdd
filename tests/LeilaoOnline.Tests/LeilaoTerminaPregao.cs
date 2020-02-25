@@ -3,13 +3,13 @@ using Xunit;
 
 namespace LeilaoOnline.Tests
 {
-    public class LeilaoTestes
+    public class LeilaoTerminaPregao
     {
         [Theory]
         [InlineData(new double[] { 800, 900, 1000, 1200 })]
         [InlineData(new double[] { 800, 900, 1000, 990 })]
         [InlineData(new double[] { 800 })]
-        public void LeilaoComVariosLances(double[] ofertas)
+        public void RetornaMaiorValorDadoLeilaoComPeloMenosUmLance(double[] ofertas)
         {
             //Arranje - cenários
             var leilao = new Leilao("Van Gogh");
@@ -37,7 +37,7 @@ namespace LeilaoOnline.Tests
         }
 
         [Fact]
-        public void LeilaoComApenasUmLance()
+        public void RetornaZeroDadoLeilaoSemLances()
         {
             //Arranje - cenários
             var leilao = new Leilao("Van Gogh");
